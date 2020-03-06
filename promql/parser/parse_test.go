@@ -565,6 +565,32 @@ var testExpr = []struct {
 			VectorMatching:	&VectorMatching{Card: CardOneToOne},
 		},
 	}, {
+		input:	"foo * sum",
+		expected: &BinaryExpr{
+			Op:	MUL,
+			LHS: &VectorSelector{
+				Name:	"foo",
+				LabelMatchers: []*labels.Matcher{
+					mustLabelMatcher(labels.MatchEqual, string(model.MetricNameLabel), "foo"),
+				},
+				PosRange: PositionRange{
+					Start:	0,
+					End:	3,
+				},
+			},
+			RHS: &VectorSelector{
+				Name:	"sum",
+				LabelMatchers: []*labels.Matcher{
+					mustLabelMatcher(labels.MatchEqual, string(model.MetricNameLabel), "sum"),
+				},
+				PosRange: PositionRange{
+					Start:	6,
+					End:	9,
+				},
+			},
+			VectorMatching:	&VectorMatching{Card: CardOneToOne},
+		},
+	}, {
 		input:	"foo == 1",
 		expected: &BinaryExpr{
 			Op:	EQL,
@@ -1312,6 +1338,19 @@ var testExpr = []struct {
 			},
 		},
 	}, {
+		input:	"min",
+		expected: &VectorSelector{
+			Name:	"min",
+			Offset:	0,
+			LabelMatchers: []*labels.Matcher{
+				mustLabelMatcher(labels.MatchEqual, string(model.MetricNameLabel), "min"),
+			},
+			PosRange: PositionRange{
+				Start:	0,
+				End:	3,
+			},
+		},
+	}, {
 		input:	"foo offset 5m",
 		expected: &VectorSelector{
 			Name:	"foo",
@@ -1930,7 +1969,7 @@ var testExpr = []struct {
 	}, {
 		input:	`sum some_metric by (test)`,
 		fail:	true,
-		errMsg:	"unexpected identifier \"some_metric\" in aggregation",
+		errMsg:	"unexpected identifier \"some_metric\"",
 	}, {
 		input:	`sum (some_metric) by test`,
 		fail:	true,
@@ -1946,7 +1985,7 @@ var testExpr = []struct {
 	}, {
 		input:	"MIN keep_common (some_metric)",
 		fail:	true,
-		errMsg:	"1:5: parse error: unexpected identifier \"keep_common\" in aggregation",
+		errMsg:	"1:5: parse error: unexpected identifier \"keep_common\"",
 	}, {
 		input:	"MIN (some_metric) keep_common",
 		fail:	true,
@@ -2128,15 +2167,52 @@ var testExpr = []struct {
 	}, {
 		input:	"rate(avg)",
 		fail:	true,
-		errMsg:	`unexpected ")"`,
+		errMsg:	`expected type range vector`,
 	}, {
 		input:	"sum(sum)",
-		fail:	true,
-		errMsg:	`unexpected ")"`,
+		expected: &AggregateExpr{
+			Op:	SUM,
+			Expr: &VectorSelector{
+				Name:	"sum",
+				LabelMatchers: []*labels.Matcher{
+					mustLabelMatcher(labels.MatchEqual, string(model.MetricNameLabel), "sum"),
+				},
+				PosRange: PositionRange{
+					Start:	4,
+					End:	7,
+				},
+			},
+			PosRange: PositionRange{
+				Start:	0,
+				End:	8,
+			},
+		},
 	}, {
 		input:	"a + sum",
-		fail:	true,
-		errMsg:	`unexpected end of input`,
+		expected: &BinaryExpr{
+			Op:	ADD,
+			LHS: &VectorSelector{
+				Name:	"a",
+				LabelMatchers: []*labels.Matcher{
+					mustLabelMatcher(labels.MatchEqual, string(model.MetricNameLabel), "a"),
+				},
+				PosRange: PositionRange{
+					Start:	0,
+					End:	1,
+				},
+			},
+			RHS: &VectorSelector{
+				Name:	"sum",
+				LabelMatchers: []*labels.Matcher{
+					mustLabelMatcher(labels.MatchEqual, string(model.MetricNameLabel), "sum"),
+				},
+				PosRange: PositionRange{
+					Start:	4,
+					End:	7,
+				},
+			},
+			VectorMatching:	&VectorMatching{},
+		},
 	},
 	// String quoting and escape sequence interpretation tests.
 	{
