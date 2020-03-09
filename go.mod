@@ -5,7 +5,7 @@ go 1.13
 require (
 	github.com/edsrzf/mmap-go v1.0.0
 	github.com/go-kit/kit v0.10.0
-	github.com/modularise/prometheus-tsdb v0.0.0-20200308120627-858deaedf844
+	github.com/modularise/prometheus-tsdb v0.0.0-20200309120701-a4b1b0426e31
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.4.1
