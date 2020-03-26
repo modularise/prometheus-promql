@@ -3,11 +3,13 @@ module github.com/modularise/prometheus-promql
 go 1.13
 
 require (
+	github.com/davecgh/go-spew v1.1.1
 	github.com/edsrzf/mmap-go v1.0.0
 	github.com/go-kit/kit v0.10.0
-	github.com/modularise/prometheus-tsdb v0.0.0-20200325120524-0bb5cc601c95
+	github.com/modularise/prometheus-tsdb v0.0.0-20200326120519-5a11b9c1d39c
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pkg/errors v0.9.1
+	github.com/pmezard/go-difflib v1.0.0
 	github.com/prometheus/client_golang v1.5.1
 	github.com/prometheus/common v0.9.1
 )
