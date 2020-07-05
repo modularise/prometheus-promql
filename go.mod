@@ -6,7 +6,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1
 	github.com/edsrzf/mmap-go v1.0.0
 	github.com/go-kit/kit v0.10.0
-	github.com/modularise/prometheus-tsdb v0.0.0-20200630120840-3a299662d8cc
+	github.com/modularise/prometheus-tsdb v0.0.0-20200705121008-cda292c227b4
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pkg/errors v0.9.1
 	github.com/pmezard/go-difflib v1.0.0
