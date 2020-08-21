@@ -6,12 +6,12 @@ require (
 	github.com/davecgh/go-spew v1.1.1
 	github.com/edsrzf/mmap-go v1.0.0
 	github.com/go-kit/kit v0.10.0
-	github.com/modularise/prometheus-tsdb v0.0.0-20200814121344-89979550b7df
+	github.com/modularise/prometheus-tsdb v0.0.0-20200821121532-af1a82ea8acd
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/pkg/errors v0.9.1
 	github.com/pmezard/go-difflib v1.0.0
 	github.com/prometheus/client_golang v1.7.1
-	github.com/prometheus/common v0.11.1
+	github.com/prometheus/common v0.13.0
 	github.com/stretchr/objx v0.2.0 // indirect
 	github.com/uber/jaeger-client-go v2.25.0+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
