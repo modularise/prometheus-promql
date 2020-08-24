@@ -6,7 +6,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1
 	github.com/edsrzf/mmap-go v1.0.0
 	github.com/go-kit/kit v0.10.0
-	github.com/modularise/prometheus-tsdb v0.0.0-20200822121321-b9c4f3655cdc
+	github.com/modularise/prometheus-tsdb v0.0.0-20200824121332-20c003bb848e
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/pkg/errors v0.9.1
 	github.com/pmezard/go-difflib v1.0.0
@@ -15,14 +15,18 @@ require (
 	github.com/stretchr/objx v0.2.0 // indirect
 	github.com/uber/jaeger-client-go v2.25.0+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
-	go.uber.org/goleak v1.0.0
+	go.uber.org/goleak v1.1.10
 )
 
 replace k8s.io/klog => github.com/simonpasquier/klog-gokit v0.1.0
 
 exclude (
 	// Exclude grpc v1.30.0 because of breaking changes. See #7621.
+	github.com/grpc-ecosystem/grpc-gateway v1.14.7
+	google.golang.org/api v0.30.0
 	google.golang.org/grpc v1.30.0
+	google.golang.org/grpc v1.31.0
+	google.golang.org/grpc v1.32.0-dev
 
 	// Exclude pre-go-mod kubernetes tags, as they are older
 	// than v0.x releases but are picked when we update the dependencies.
