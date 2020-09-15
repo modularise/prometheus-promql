@@ -6,7 +6,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1
 	github.com/edsrzf/mmap-go v1.0.0
 	github.com/go-kit/kit v0.10.0
-	github.com/modularise/prometheus-tsdb v0.0.0-20200911122217-1cb39762c1e4
+	github.com/modularise/prometheus-tsdb v0.0.0-20200915121438-fdbb0ee510b2
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/pkg/errors v0.9.1
 	github.com/pmezard/go-difflib v1.0.0
@@ -24,9 +24,6 @@ exclude (
 	// Exclude grpc v1.30.0 because of breaking changes. See #7621.
 	github.com/grpc-ecosystem/grpc-gateway v1.14.7
 	google.golang.org/api v0.30.0
-	google.golang.org/grpc v1.30.0
-	google.golang.org/grpc v1.31.0
-	google.golang.org/grpc v1.32.0-dev
 
 	// Exclude pre-go-mod kubernetes tags, as they are older
 	// than v0.x releases but are picked when we update the dependencies.
