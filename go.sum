@@ -181,8 +181,8 @@ github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421/go.mod h1:6dJ
 github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=
 github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742/go.mod h1:bx2lNnkwVCuqBIxFjflWJWanXIb3RllmbCylyMrvgv0=
 github.com/modern-go/reflect2 v1.0.1/go.mod h1:bx2lNnkwVCuqBIxFjflWJWanXIb3RllmbCylyMrvgv0=
-github.com/modularise/prometheus-tsdb v0.0.0-20200919121450-d76651a7461f h1:H1XEsdWhn60Ago+3JE6+qEm18MnD6IhMuXi4/vgGqgg=
-github.com/modularise/prometheus-tsdb v0.0.0-20200919121450-d76651a7461f/go.mod h1:4LMK2jAc8ObSCli9H4y/RHgnr8I1dra/KPc5NQ8mhh8=
+github.com/modularise/prometheus-tsdb v0.0.0-20200921121512-70f8dbbedf6e h1:ifBF1FwR5z/d6tBbrCHmD1panrAv6ewKmQFNvldojoo=
+github.com/modularise/prometheus-tsdb v0.0.0-20200921121512-70f8dbbedf6e/go.mod h1:4LMK2jAc8ObSCli9H4y/RHgnr8I1dra/KPc5NQ8mhh8=
 github.com/mwitkow/go-conntrack v0.0.0-20161129095857-cc309e4a2223/go.mod h1:qRWi+5nqEBWmkhHvq77mSJWrCKwh8bxhgT7d/eI7P4U=
 github.com/mwitkow/go-conntrack v0.0.0-20190716064945-2f068394615f/go.mod h1:qRWi+5nqEBWmkhHvq77mSJWrCKwh8bxhgT7d/eI7P4U=
 github.com/nats-io/jwt v0.3.0/go.mod h1:fRYCDE99xlTsqUzISS1Bi75UBJ6ljOJQOAAu5VglpSg=
