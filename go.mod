@@ -6,7 +6,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1
 	github.com/edsrzf/mmap-go v1.0.0
 	github.com/go-kit/kit v0.10.0
-	github.com/modularise/prometheus-tsdb v0.0.0-20201005121626-770bd80eb849
+	github.com/modularise/prometheus-tsdb v0.0.0-20201007121644-85862429506e
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/pkg/errors v0.9.1
 	github.com/pmezard/go-difflib v1.0.0
@@ -18,7 +18,10 @@ require (
 	go.uber.org/goleak v1.1.10
 )
 
-replace k8s.io/klog => github.com/simonpasquier/klog-gokit v0.1.0
+replace (
+	k8s.io/klog => github.com/simonpasquier/klog-gokit v0.3.0
+	k8s.io/klog/v2 => github.com/simonpasquier/klog-gokit/v2 v2.0.1
+)
 
 exclude (
 	// Exclude grpc v1.30.0 because of breaking changes. See #7621.
